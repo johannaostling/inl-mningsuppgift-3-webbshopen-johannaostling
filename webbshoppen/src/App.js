@@ -1,19 +1,25 @@
+import { useState } from 'react';
 import './App.css';
 import DisplayProducts from './displayProducts';
-// import products from './databas';
-
-// console.log('your products', products)
-// console.log(products[0])
-
+import SearchForm from './searchForm';
 
 function App() {
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleSearch = (newSearch) => {
+    setSearchValue(newSearch);
+    console.log("Search value in App:", newSearch);
+  };
+
+
+
+  
   return (
     <div className="App">
-    <h1>Turn a green leaf</h1>
+      <h1>Turn a green leaf</h1>
+      <SearchForm onSearch={handleSearch} />
       <div>
-        <DisplayProducts>
-          
-        </DisplayProducts>
+        <DisplayProducts searchValue={searchValue} />
       </div>
     </div>
   );

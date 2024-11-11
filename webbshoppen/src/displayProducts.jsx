@@ -1,27 +1,27 @@
 import products from "./databas";
-import SearchForm from "./searchForm";
 
-function DisplayProducts(){
+function DisplayProducts(searchValue){
 
     console.log(products)
 
 
     const productItems = []
+
     for(let i=0; i<products.length; i++){
+      if(products[i].name.includes(searchValue.searchValue) || products[i].description.includes(searchValue.searchValue) ){
         productItems.push(
-            <div key={i}>
-              <h2>{products[i].name}</h2>
-              <p>Price: ${products[i].price.toFixed(2)}</p>
-              <p>{products[i].description}</p>
-              <button>Buy</button>
-            </div>
-          );
+          <div key={i}>
+            <h2>{products[i].name}</h2>
+            <p>Price: ${products[i].price.toFixed()}</p>
+            <p>{products[i].description}</p>
+            <button>Buy</button>
+          </div>
+        );
+      }
     }
 
     return (
         <>
-            <SearchForm></SearchForm>
-            <h1>Our Products</h1>
             <div>{productItems}</div>
         </>
       );
