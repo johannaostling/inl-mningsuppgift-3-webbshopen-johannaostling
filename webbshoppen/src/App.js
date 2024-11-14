@@ -4,12 +4,10 @@ import DisplayProducts from './DisplayProducts';
 import SearchForm from './searchForm';
 import Cart from './cart';
 
-
-
-
 function App() {
   const [searchValue, setSearchValue] = useState("");
   const [cart, setCart] = useState([])
+  console.log(cart)
 
   const handleSearch = (newSearch) => {
     setSearchValue(newSearch);
@@ -17,8 +15,32 @@ function App() {
   };
 
   const addToCart = (product) =>{
-    setCart((prevCart) => [...prevCart, product])
+    setCart((prevCart) =>{
+      const existingProduct = prevCart.find((item) => item.product_number === product.product_number);
+      
+      if(existingProduct){
+        return prevCart.map((item) => 
+          item.product_number === product.product_number ? {...item, qty: item.qty +1} :item)
+      }
+      else{
+        return [...prevCart, {...product, qty:1}]
+      }
+    }) 
   }
+
+  const removeFromCart = (productNumber) => {
+    setCart((prevCart) => {
+      const updatedCart = prevCart
+        .map((item) =>
+          item.product_number === productNumber
+            ? { ...item, qty: item.qty - 1 }
+            : item
+        )
+        .filter((item) => item.qty > 0);
+
+      return updatedCart;
+    });
+  };
 
   
   return (
@@ -26,7 +48,7 @@ function App() {
       <h1>Turn a green leaf</h1>
         <SearchForm onSearch={handleSearch} />
         <div>
-        <Cart cart={cart} />
+        <Cart cart={cart} removeFromCart={removeFromCart} />
       </div>
       <div>
         <DisplayProducts searchValue={searchValue} addToCart={addToCart}/>
@@ -34,5 +56,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
