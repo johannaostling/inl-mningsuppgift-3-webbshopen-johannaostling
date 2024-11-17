@@ -1,4 +1,5 @@
 .App {
+  margin-right: 300px;
   text-align: center;
 }
 
@@ -37,3 +38,6 @@
   }
 }
 
+.Topbar {
+  align-items: center;
+}

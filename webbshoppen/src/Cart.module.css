@@ -1,0 +1,13 @@
+.genereallstyle {
+    position: fixed; /* Keeps the cart fixed on the screen */
+    top: 10%; /* Slightly below the top for aesthetics */
+    right: 0; /* Aligns it to the right side */
+    width: 300px; /* Fixed width */
+    max-height: 80%; /* Ensures it doesn’t grow beyond 80% of the viewport height */
+    background-color: #f4f4f4; /* Light background for distinction */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 16px; /* Space inside the cart */
+    overflow-y: auto; /* Allows scrolling if content exceeds max height */
+    border-radius: 8px 0 0 8px; /* Rounded corners on the left for a smoother look */
+    transition: height 0.3s ease; /* Smooth resizing */
+  }

@@ -46,10 +46,11 @@ function App() {
   return (
     <div className="App">
       <h1>Turn a green leaf</h1>
+      <div className='Topbar'>
         <SearchForm onSearch={handleSearch} />
-        <div>
         <Cart cart={cart} removeFromCart={removeFromCart} />
       </div>
+      <hr />
       <div>
         <DisplayProducts searchValue={searchValue} addToCart={addToCart}/>
       </div>

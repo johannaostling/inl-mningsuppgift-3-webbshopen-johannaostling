@@ -1,9 +1,10 @@
-
+import styles from './Cart.module.css'
 export default function Cart({ cart, removeFromCart}) {
     const totalSum = cart.reduce((sum, item) => sum + item.qty*item.price, 0);
     
     return (
       <>
+      <div className={styles.genereallstyle}>
         <h3>Cart</h3>
         <div>
           {cart.length > 0 ? (
@@ -21,6 +22,7 @@ export default function Cart({ cart, removeFromCart}) {
           )}
         </div>
         <p>Sum: ${totalSum.toFixed()}</p>
+        </div>
       </>
     );
   }

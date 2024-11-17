@@ -1,16 +1,16 @@
+import styles from './Card.module.css';
 
 function Card({index, product, addToCart}){
-console.log(JSON.stringify(index));
 
 
     return(
         <>
-            <div>
-                {/* <img src={imgsrc} alt="" /> */}
+            <div className={styles.genereal}>
                 <h2>{product.name}</h2>
+                <div className={styles.box} />
                 <p>Price: ${product.price}</p>
                 <p>{product.description}</p>
-                <button onClick={()=>addToCart(product)}> Buy</button>
+                <button className={styles.button} onClick={()=>addToCart(product)}> Buy</button>
             </div>
         </>
     )
