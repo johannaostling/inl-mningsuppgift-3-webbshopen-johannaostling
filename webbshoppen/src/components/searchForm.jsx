@@ -1,7 +1,6 @@
 
 export default function SearchForm({ onSearch, searchValue }) {
 
-
   function userSearch(event) {
 
     onSearch(event.target.value)
@@ -11,10 +10,8 @@ export default function SearchForm({ onSearch, searchValue }) {
 
   return (
     <>
-
-        <label htmlFor="search">Sök</label>
+        <label htmlFor="search">Search </label>
         <input type="text" name="search" id="search" value={searchValue} onChange={userSearch}/>
-
     </>
   );
 }

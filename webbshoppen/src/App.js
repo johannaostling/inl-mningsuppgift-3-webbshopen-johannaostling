@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import DisplayProducts from './DisplayProducts';
-import SearchForm from './searchForm';
-import Cart from './cart';
+import DisplayProducts from './components/DisplayProducts';
+import SearchForm from './components/searchForm';
+import Cart from './components/cart';
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
@@ -45,7 +45,7 @@ function App() {
   
   return (
     <div className="App">
-      <h1>Turn a green leaf</h1>
+      <h1 className='App-header'>Turn a green leaf</h1>
       <div className='Topbar'>
         <SearchForm onSearch={handleSearch} />
         <Cart cart={cart} removeFromCart={removeFromCart} />

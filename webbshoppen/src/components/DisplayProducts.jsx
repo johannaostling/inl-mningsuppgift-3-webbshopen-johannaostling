@@ -1,4 +1,4 @@
-import Card from "./components/Card";
+import Card from "./Card";
 import products from "./databas";
 import styles from './DisplayProducts.module.css'
 

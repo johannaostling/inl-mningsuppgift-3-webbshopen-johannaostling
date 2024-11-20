@@ -12,7 +12,6 @@ export default function Cart({ cart, removeFromCart}) {
               <div key={index}>
                 <h2>{item.name}</h2>
                 <p>Price: ${item.price.toFixed()}</p>
-                <p>{item.description}</p>
                 <p>{item.qty}</p>
                 <button onClick={() => removeFromCart(item.product_number)}>Remove</button>
               </div>

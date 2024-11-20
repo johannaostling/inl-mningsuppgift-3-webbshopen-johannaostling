@@ -1,0 +1,13 @@
+.genereallstyle {
+    position: fixed;
+    top: 10%; 
+    right: 0; 
+    width: 300px; 
+    max-height: 80%; 
+    background-color: #f4f4f4;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    overflow-y: auto;
+    border-radius: 8px 0 0 8px; 
+    transition: height 0.3s ease;
+}
