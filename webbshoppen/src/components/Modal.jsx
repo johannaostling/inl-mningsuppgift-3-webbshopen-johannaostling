@@ -1,23 +1,24 @@
+import style from './Modal.module.css'
 function Modal({ isOpen, onClose, description, img }) {
     if (!isOpen) return null;
   
     return (
-      <div className="modal-overlay" onClick={onClose}>
+      <div className={style.modaloverlay} onClick={onClose}>
         <div
-          className="modal-content"
+          className={style.modalcontent}
           onClick={(e) => e.stopPropagation()}
         >
-          <button className="modal-close-button" onClick={onClose}>
+          <button className={style.modalclosebutton} onClick={onClose}>
             &times; 
           </button>
-          <div className="modal-description">
-            {description || "No description provided."}
-          </div>
           <img 
-          className="modal-image"
+          className={style.modalimage}
           src={img}
           alt="image unable to load"
             />
+          <div className={style.modaldescription}>
+            {description || "No description provided."}
+          </div>
         </div>
       </div>
     );
