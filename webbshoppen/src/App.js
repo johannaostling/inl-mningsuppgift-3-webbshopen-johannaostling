@@ -9,11 +9,13 @@ function App() {
   const [cart, setCart] = useState([])
   console.log(cart)
 
+  // get value from search
   const handleSearch = (newSearch) => {
     setSearchValue(newSearch);
     console.log("Search value in App:", newSearch);
   };
 
+  // add products to cart or increase qty
   const addToCart = (product) =>{
     setCart((prevCart) =>{
       const existingProduct = prevCart.find((item) => item.product_number === product.product_number);
@@ -28,6 +30,7 @@ function App() {
     }) 
   }
 
+  // removes products from cart or decrease qty
   const removeFromCart = (productNumber) => {
     setCart((prevCart) => {
       const updatedCart = prevCart

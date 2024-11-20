@@ -1,6 +1,8 @@
 
 export default function SearchForm({ onSearch, searchValue }) {
 
+
+  // gets the value from what the user types in search
   function userSearch(event) {
 
     onSearch(event.target.value)

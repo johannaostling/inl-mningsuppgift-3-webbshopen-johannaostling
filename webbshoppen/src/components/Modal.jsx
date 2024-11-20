@@ -11,11 +11,13 @@ function Modal({ isOpen, onClose, description, img }) {
           <button className={style.modalclosebutton} onClick={onClose}>
             &times; 
           </button>
+
           <img 
           className={style.modalimage}
           src={img}
           alt="image unable to load"
             />
+            
           <div className={style.modaldescription}>
             {description || "No description provided."}
           </div>
